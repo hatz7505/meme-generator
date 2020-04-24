@@ -1,0 +1,114 @@
+body, html {
+    height: 100%;
+    margin: 0px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+.bg {
+    background: 
+        linear-gradient(to left,
+        transparent,
+        transparent,
+        rgba(199, 186, 168, 0.5)
+        ),
+        url(obama.jpg);
+
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.header {
+    color: #4b4a52;
+    font-weight: normal;
+    margin-top: 30px;
+    margin-left: 50px;
+    font-size: 43px;
+    margin-bottom: 0;
+}
+.form {
+    color: #4b4a52;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 22px;
+}
+input { 
+    margin-bottom: 10px; 
+}
+
+.memes {
+    position: relative;
+    display: inline-block;
+    margin: 12px;
+    height: 250px;
+}
+.topText {
+    position: absolute;
+    color: white;
+    top: 10px;
+    left: 0;
+    right: 0;
+    font-size: 25px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 2px 2px 2px black;
+}
+.bottomText {
+    position: absolute;
+    color: white;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    font-size: 25px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 2px 2px 2px black;
+}
+.picture {
+    width: 375px;
+    height: 250px;
+    object-fit: cover;
+}
+#memeContainer {
+    width: 798px;
+    margin-left: 38px;
+    margin-top: 20px;
+    height: 60%;
+    overflow: scroll;
+    box-shadow: 0px 0px 5px 5px rgba(109, 79, 60, 0.75);
+    background-color: white;
+}
+.hoverX {
+    transition: opacity 0.3s;
+    position: absolute;
+    height: 150px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+}
+.memes:hover .hoverX {
+    opacity: 1;
+}
+.hoverDiv {
+    transition: opacity 0.3s;
+    position: absolute;
+    background-color: black;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.memes:hover .hoverDiv {
+    opacity: 0.55;
+}

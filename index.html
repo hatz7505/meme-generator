@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meme generator</title>
+    <link rel="shortcut icon" href="laughing.ico" type="image/icon">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ <div class="bg">
+     <h1 class="header">make memes? yes we can.</h1>
+     <form class="form"> 
+         <label for="imageLink">image url:</label>
+         <input type="url" size="58" placeholder="paste your image link" id="imageLink" required>
+         <br>
+        <label for="textOnTop">text on top:</label>
+         <input type="text" size="56" placeholder="what do you want to say on top?" id=textOnTop>
+         <br>
+        <label for="textOnBottom">text on bottom:</label>
+        <input type="text" size="50" placeholder="what do you want to say on bottom?" id=textOnBottom>
+        <br>
+        <input type="submit" value="show me the meme!">
+    </form>
+    <div id="memeContainer"></div>
+    
+ </div>
+
+<script>
+    function makeMeme() {
+
+        let newDiv = document.createElement("div");
+        newDiv.classList.add('memes')
+        let img = document.createElement("img");
+        img.src=document.getElementById('imageLink').value;
+        img.classList.add('picture');
+        let topText = document.createElement("div");
+        topText.innerHTML=document.getElementById('textOnTop').value;
+        topText.classList.add('topText');
+        let bottomText = document.createElement("div");
+        bottomText.innerHTML = document.getElementById('textOnBottom').value;
+        bottomText.classList.add('bottomText');
+        let hoverX = document.createElement("img");
+        hoverX.src= "letterX.png";
+        hoverX.classList.add('hoverX');
+        let hoverDiv = document.createElement("div");
+        hoverDiv.classList.add('hoverDiv');
+
+
+        var container = document.getElementById('memeContainer')
+        newDiv.appendChild(img);
+        newDiv.appendChild(topText);
+        newDiv.appendChild(bottomText);
+        newDiv.appendChild(hoverDiv);
+        newDiv.appendChild(hoverX);
+        container.appendChild(newDiv);
+
+        newDiv.addEventListener('click', function () {
+            container.removeChild(newDiv);
+        })
+
+    }
+
+    document.getElementsByClassName('form')[0].addEventListener('submit', function(e) {
+        e.preventDefault();
+        makeMeme();
+        document.getElementsByClassName('form')[0].reset();
+    })
+
+</script>
+
+</body>
+
+</html>
